@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign In — Aurum Grand Hotel</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .auth-tab-btn{background:transparent;border:none;color:var(--text-mid);font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;font-weight:500;padding:10px 0;cursor:pointer;border-bottom:2px solid transparent;transition:var(--transition);font-family:inherit;}
+    .auth-tab-btn.active{color:var(--gold);border-bottom-color:var(--gold);}
+    .auth-tabs{display:flex;gap:36px;margin-bottom:36px;border-bottom:1px solid rgba(255,255,255,0.06);}
+    .social-btn{width:100%;padding:13px 20px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);color:var(--cream);font-size:0.8rem;font-family:inherit;border-radius:2px;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:10px;transition:var(--transition);}
+    .social-btn:hover{background:rgba(255,255,255,0.07);}
+    .divider-or{display:flex;align-items:center;gap:16px;margin:24px 0;font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--text-mid);}
+    .divider-or::before,.divider-or::after{content:'';flex:1;height:1px;background:rgba(255,255,255,0.06);}
+  </style>
+</head>
+<body data-page="login">
+
+  <nav class="navbar" id="navbar">
+    <a href="index.html" class="nav-logo">AURUM<span> GRAND</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html" data-page="home">Home</a></li>
+      <li><a href="search.html" data-page="search">Rooms</a></li>
+    </ul>
+    <button class="nav-btn" id="nav-auth-btn">Sign In</button>
+  </nav>
+
+  <div class="auth-wrapper">
+    <!-- VISUAL -->
+    <div class="auth-visual">
+      <div class="auth-visual-bg"></div>
+      <div class="auth-visual-content">
+        <div class="label-text" style="margin-bottom:16px;">Est. 1924</div>
+        <h2 style="font-family:'Cormorant Garamond',serif;font-size:3rem;font-weight:300;color:var(--white);margin-bottom:16px;">Welcome to<br><em style="color:var(--gold-light);">Aurum Grand</em></h2>
+        <p style="color:var(--text-light);font-size:0.82rem;line-height:1.9;max-width:380px;">Sign in to access exclusive member rates, manage your reservations, and enjoy a seamless booking experience.</p>
+        <div style="display:flex;gap:40px;margin-top:40px;">
+          <div><div style="font-family:'Cormorant Garamond',serif;font-size:2rem;color:var(--gold-light);">5★</div><div class="label-text" style="font-size:0.55rem;">Luxury Rating</div></div>
+          <div><div style="font-family:'Cormorant Garamond',serif;font-size:2rem;color:var(--gold-light);">100+</div><div class="label-text" style="font-size:0.55rem;">Years Legacy</div></div>
+          <div><div style="font-family:'Cormorant Garamond',serif;font-size:2rem;color:var(--gold-light);">98%</div><div class="label-text" style="font-size:0.55rem;">Satisfaction</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FORM SIDE -->
+    <div class="auth-form-side">
+      <a href="index.html" class="auth-logo">AURUM<span> GRAND</span></a>
+      <p style="color:var(--text-mid);font-size:0.8rem;margin-bottom:40px;">Your luxury experience awaits</p>
+
+      <div class="auth-tabs">
+        <button class="auth-tab-btn active" data-tab="login">Sign In</button>
+        <button class="auth-tab-btn" data-tab="register">Create Account</button>
+      </div>
+
+      <!-- LOGIN -->
+      <div id="tab-login" class="auth-tab-content">
+        <div style="margin-bottom:6px;">
+          <button class="social-btn">
+            <svg width="18" height="18" viewBox="0 0 48 48"><path fill="#FFC107" d="M43.611,20.083H42V20H24v8h11.303c-1.649,4.657-6.08,8-11.303,8c-6.627,0-12-5.373-12-12s5.373-12,12-12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C12.955,4,4,12.955,4,24s8.955,20,20,20s20-8.955,20-20C44,22.659,43.862,21.35,43.611,20.083z"/><path fill="#FF3D00" d="M6.306,14.691l6.571,4.819C14.655,15.108,18.961,12,24,12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C16.318,4,9.656,8.337,6.306,14.691z"/><path fill="#4CAF50" d="M24,44c5.166,0,9.86-1.977,13.409-5.192l-6.19-5.238C29.211,35.091,26.715,36,24,36c-5.202,0-9.619-3.317-11.283-7.946l-6.522,5.025C9.505,39.556,16.227,44,24,44z"/><path fill="#1976D2" d="M43.611,20.083H42V20H24v8h11.303c-0.792,2.237-2.231,4.166-4.087,5.571l6.19,5.238C36.971,39.205,44,34,44,24C44,22.659,43.862,21.35,43.611,20.083z"/></svg>
+            Continue with Google
+          </button>
+        </div>
+        <div class="divider-or">or</div>
+        <form id="login-form" style="display:flex;flex-direction:column;gap:18px;">
+          <div class="form-group">
+            <label class="form-label" for="login-email">Email Address</label>
+            <input type="email" class="form-control" id="login-email" placeholder="your@email.com" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="login-pass">Password</label>
+            <input type="password" class="form-control" id="login-pass" placeholder="Enter your password" required>
+          </div>
+          <div style="display:flex;justify-content:flex-end;">
+            <a href="#" style="font-size:0.72rem;color:var(--gold);">Forgot password?</a>
+          </div>
+          <button type="submit" class="btn-primary w-full"><span>Sign In to Your Account</span></button>
+        </form>
+        <p style="text-align:center;margin-top:28px;font-size:0.78rem;color:var(--text-mid);">
+          Don't have an account?
+          <button onclick="document.querySelector('[data-tab=register]').click()" style="background:none;border:none;color:var(--gold);font-family:inherit;font-size:inherit;cursor:pointer;">Create one now</button>
+        </p>
+      </div>
+
+      <!-- REGISTER -->
+      <div id="tab-register" class="auth-tab-content hidden">
+        <form id="register-form" style="display:flex;flex-direction:column;gap:16px;">
+          <div class="grid-2">
+            <div class="form-group">
+              <label class="form-label" for="reg-first">First Name *</label>
+              <input type="text" class="form-control" id="reg-first" name="firstName" placeholder="Rahul" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="reg-last">Last Name</label>
+              <input type="text" class="form-control" id="reg-last" name="lastName" placeholder="Sharma">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="reg-email">Email Address *</label>
+            <input type="email" class="form-control" id="reg-email" name="email" placeholder="your@email.com" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="reg-phone">Phone Number</label>
+            <input type="tel" class="form-control" id="reg-phone" name="phone" placeholder="+91 98765 43210">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="reg-pass">Password * (min 6 characters)</label>
+            <input type="password" class="form-control" id="reg-pass" name="password" placeholder="Create a strong password" required>
+          </div>
+          <button type="submit" class="btn-primary w-full"><span>Create Your Account</span></button>
+        </form>
+        <p style="text-align:center;margin-top:20px;font-size:0.72rem;color:var(--text-mid);line-height:1.7;">
+          By creating an account, you agree to our<br>
+          <a href="#" style="color:var(--gold);">Terms of Service</a> and <a href="#" style="color:var(--gold);">Privacy Policy</a>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

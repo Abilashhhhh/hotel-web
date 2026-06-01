@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Booking Confirmed — Aurum Grand Hotel</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    @media print {
+      .navbar,.no-print{display:none!important;}
+      body{background:white;color:black;}
+      .confirmation-card{border:1px solid #ccc;box-shadow:none;}
+      .booking-id-display{color:#A0762B;}
+    }
+  </style>
+</head>
+<body data-page="confirmation">
+
+  <nav class="navbar no-print" id="navbar">
+    <a href="index.html" class="nav-logo">AURUM<span> GRAND</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html" data-page="home">Home</a></li>
+      <li><a href="search.html" data-page="search">Rooms</a></li>
+    </ul>
+    <button class="nav-btn" id="nav-auth-btn">Sign In</button>
+  </nav>
+
+  <canvas id="confetti-canvas" style="position:fixed;top:0;left:0;pointer-events:none;z-index:9999;"></canvas>
+
+  <div class="confirmation-wrapper">
+    <div class="confetti-bg"></div>
+    <div class="confirmation-card">
+
+      <div class="confirm-icon">✓</div>
+
+      <span class="label-text" style="display:block;margin-bottom:8px;">Reservation Confirmed</span>
+      <h1 style="font-family:'Cormorant Garamond',serif;font-size:2.5rem;font-weight:300;color:var(--white);">Your stay is booked!</h1>
+      <p style="color:var(--text-mid);font-size:0.8rem;margin:12px auto 0;line-height:1.8;max-width:420px;">A confirmation has been sent to your email. We look forward to welcoming you to Aurum Grand.</p>
+
+      <div class="gold-divider" style="margin:24px 0;"><span>✦</span></div>
+
+      <span class="label-text" style="display:block;margin-bottom:4px;">Booking Reference</span>
+      <div class="booking-id-display" id="conf-booking-id">AGH-2024-000000</div>
+
+      <div style="height:180px;border-radius:2px;overflow:hidden;margin:24px 0;">
+        <img id="conf-room-img" src="" alt="Room" style="width:100%;height:100%;object-fit:cover;">
+      </div>
+
+      <!-- BOOKING DETAILS GRID -->
+      <div class="confirm-details-grid">
+        <div class="confirm-detail-item">
+          <div class="label-text" style="font-size:0.58rem;margin-bottom:6px;">Room</div>
+          <div style="font-size:0.88rem;color:var(--cream);" id="conf-room">—</div>
+        </div>
+        <div class="confirm-detail-item">
+          <div class="label-text" style="font-size:0.58rem;margin-bottom:6px;">Guest Name</div>
+          <div style="font-size:0.88rem;color:var(--cream);" id="conf-guest">—</div>
+        </div>
+        <div class="confirm-detail-item">
+          <div class="label-text" style="font-size:0.58rem;margin-bottom:6px;">Check-In</div>
+          <div style="font-size:0.88rem;color:var(--cream);" id="conf-checkin">—</div>
+        </div>
+        <div class="confirm-detail-item">
+          <div class="label-text" style="font-size:0.58rem;margin-bottom:6px;">Check-Out</div>
+          <div style="font-size:0.88rem;color:var(--cream);" id="conf-checkout">—</div>
+        </div>
+        <div class="confirm-detail-item">
+          <div class="label-text" style="font-size:0.58rem;margin-bottom:6px;">Duration</div>
+          <div style="font-size:0.88rem;color:var(--cream);" id="conf-nights">—</div>
+        </div>
+        <div class="confirm-detail-item">
+          <div class="label-text" style="font-size:0.58rem;margin-bottom:6px;">Guests</div>
+          <div style="font-size:0.88rem;color:var(--cream);" id="conf-guests-count">—</div>
+        </div>
+        <div class="confirm-detail-item">
+          <div class="label-text" style="font-size:0.58rem;margin-bottom:6px;">Email</div>
+          <div style="font-size:0.82rem;color:var(--cream);" id="conf-email">—</div>
+        </div>
+        <div class="confirm-detail-item">
+          <div class="label-text" style="font-size:0.58rem;margin-bottom:6px;">Phone</div>
+          <div style="font-size:0.88rem;color:var(--cream);" id="conf-phone">—</div>
+        </div>
+      </div>
+
+      <!-- PRICE BREAKDOWN -->
+      <div style="background:var(--dark-3);border:1px solid rgba(201,168,76,0.12);border-radius:2px;padding:20px 22px;margin:16px 0;text-align:left;">
+        <div class="label-text" style="margin-bottom:14px;">Price Breakdown</div>
+        <div style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid rgba(255,255,255,0.04);">
+          <span style="font-size:0.78rem;color:var(--text-mid);">Room Rate</span>
+          <span style="font-size:0.82rem;color:var(--cream);" id="conf-room-rate">—</span>
+        </div>
+        <div style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid rgba(255,255,255,0.04);">
+          <span style="font-size:0.78rem;color:var(--text-mid);">Subtotal (Room × Nights)</span>
+          <span style="font-size:0.82rem;color:var(--cream);" id="conf-subtotal">—</span>
+        </div>
+        <div style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid rgba(255,255,255,0.04);">
+          <span style="font-size:0.78rem;color:var(--text-mid);">GST (18%)</span>
+          <span style="font-size:0.82rem;color:var(--cream);" id="conf-tax">—</span>
+        </div>
+        <div style="display:flex;justify-content:space-between;padding-top:14px;margin-top:6px;border-top:1px solid rgba(201,168,76,0.2);">
+          <span class="label-text">Total Amount Paid</span>
+          <span style="font-family:'Cormorant Garamond',serif;font-size:1.8rem;color:var(--gold-light);" id="conf-total">—</span>
+        </div>
+      </div>
+
+      <div style="display:flex;justify-content:space-between;padding:10px 0;align-items:center;">
+        <span style="font-size:0.72rem;color:var(--text-mid);">Payment Method</span>
+        <span style="font-size:0.85rem;color:var(--cream);" id="conf-payment">—</span>
+      </div>
+
+      <!-- IMPORTANT INFO -->
+      <div style="background:rgba(201,168,76,0.05);border:1px solid rgba(201,168,76,0.15);border-radius:2px;padding:18px 22px;margin:20px 0;text-align:left;">
+        <div class="label-text" style="margin-bottom:10px;">Important Information</div>
+        <ul style="list-style:none;display:flex;flex-direction:column;gap:8px;">
+          <li style="font-size:0.78rem;color:var(--text-mid);display:flex;gap:8px;"><span style="color:var(--gold);flex-shrink:0;">✦</span> Check-in: 2:00 PM onwards. Early check-in subject to availability.</li>
+          <li style="font-size:0.78rem;color:var(--text-mid);display:flex;gap:8px;"><span style="color:var(--gold);flex-shrink:0;">✦</span> Check-out: 12:00 PM. Late check-out on request.</li>
+          <li style="font-size:0.78rem;color:var(--text-mid);display:flex;gap:8px;"><span style="color:var(--gold);flex-shrink:0;">✦</span> Free cancellation up to 48 hours before arrival.</li>
+          <li style="font-size:0.78rem;color:var(--text-mid);display:flex;gap:8px;"><span style="color:var(--gold);flex-shrink:0;">✦</span> Present your Booking ID and government-issued photo ID at check-in.</li>
+          <li style="font-size:0.78rem;color:var(--text-mid);display:flex;gap:8px;"><span style="color:var(--gold);flex-shrink:0;">✦</span> GST receipt available at the front desk upon check-out.</li>
+        </ul>
+      </div>
+
+      <!-- ACTIONS -->
+      <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;" class="no-print">
+        <button id="print-btn" class="btn-outline" style="padding:13px 28px;">🖨️ &nbsp;Print / Save PDF</button>
+        <button id="new-booking-btn" class="btn-primary" style="padding:13px 28px;"><span>Make Another Booking</span></button>
+      </div>
+
+      <div style="margin-top:32px;padding-top:24px;border-top:1px solid rgba(201,168,76,0.1);">
+        <p style="font-size:0.75rem;color:var(--text-mid);line-height:1.8;text-align:center;">
+          Need help? Contact our concierge team<br>
+          <a href="tel:+919876543210" style="color:var(--gold);">+91 98765 43210</a> &nbsp;·&nbsp;
+          <a href="mailto:reservations@aurumgrand.in" style="color:var(--gold);">reservations@aurumgrand.in</a>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div style="background:var(--dark-2);border-top:1px solid rgba(201,168,76,0.08);padding:28px 5vw;text-align:center;" class="no-print">
+    <p style="font-size:0.72rem;color:var(--text-mid);">© 2024 Aurum Grand Hotel · All rights reserved · GSTIN: 33AAAAA0000A1Z5</p>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

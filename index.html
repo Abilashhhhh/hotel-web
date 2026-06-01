@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aurum Grand Hotel — Luxury Stays</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="home">
+
+  <nav class="navbar" id="navbar">
+    <div class="nav-logo">AURUM<span> GRAND</span></div>
+    <ul class="nav-links">
+      <li><a href="index.html" data-page="home">Home</a></li>
+      <li><a href="search.html" data-page="search">Rooms</a></li>
+      <li><a href="#amenities">Amenities</a></li>
+      <li><a href="#about">About</a></li>
+    </ul>
+    <button class="nav-btn" id="nav-auth-btn">Sign In</button>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="hero-bg"></div>
+    <div class="hero-content">
+      <span class="hero-tag">Est. 1924 · Five Star Luxury</span>
+      <h1 class="hero-title">Where <em>Luxury</em><br>Meets Legacy</h1>
+      <p class="hero-sub">Experience unparalleled elegance in the heart of the city.<br>Every detail crafted for the extraordinary.</p>
+      <div class="hero-actions">
+        <a href="search.html" class="btn-primary"><span>Explore Rooms</span></a>
+        <a href="#about" class="btn-outline">Our Story</a>
+      </div>
+    </div>
+    <div class="scroll-indicator">
+      <div class="scroll-line"></div>
+      Discover
+    </div>
+  </section>
+
+  <!-- QUICK SEARCH -->
+  <div style="padding:0 5vw;position:relative;z-index:10;margin-top:-32px;">
+    <div class="search-bar">
+      <div class="label-text" style="margin-bottom:18px;">Reserve Your Stay</div>
+      <form id="hero-search-form">
+        <div class="search-bar-grid">
+          <div class="form-group">
+            <label class="form-label">Check-In Date</label>
+            <input type="date" class="form-control" id="hero-checkin" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Check-Out Date</label>
+            <input type="date" class="form-control" id="hero-checkout" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Room Type</label>
+            <select class="form-control" id="hero-roomtype">
+              <option value="any">Any Room Type</option>
+              <option value="Classic">Classic Room</option>
+              <option value="Superior">Superior Room</option>
+              <option value="Junior">Junior Suite</option>
+              <option value="Deluxe">Deluxe Suite</option>
+              <option value="Presidential">Presidential Suite</option>
+            </select>
+          </div>
+          <button type="submit" class="btn-primary" style="height:52px;white-space:nowrap;">
+            <span>Check Availability</span>
+          </button>
+        </div>
+        <div style="margin-top:16px;max-width:200px;">
+          <div class="form-group">
+            <label class="form-label">Guests</label>
+            <select class="form-control" id="hero-guests">
+              <option value="1">1 Guest</option>
+              <option value="2">2 Guests</option>
+              <option value="3">3 Guests</option>
+              <option value="4">4 Guests</option>
+              <option value="5">5 Guests</option>
+              <option value="6">6 Guests</option>
+            </select>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- STATS -->
+  <div class="stats-strip" id="about">
+    <div class="stat-item" data-anim><div class="stat-number" data-count="450" data-suffix="+">0</div><div class="stat-label">Luxury Rooms</div></div>
+    <div class="stat-item" data-anim><div class="stat-number" data-count="98" data-suffix="%">0</div><div class="stat-label">Guest Satisfaction</div></div>
+    <div class="stat-item" data-anim><div class="stat-number" data-count="100" data-suffix="">0</div><div class="stat-label">Years of Heritage</div></div>
+    <div class="stat-item" data-anim><div class="stat-number" data-count="12" data-suffix="">0</div><div class="stat-label">Awards Won</div></div>
+    <div class="stat-item" data-anim><div class="stat-number" data-count="5" data-suffix=" ★">0</div><div class="stat-label">Star Rating</div></div>
+  </div>
+
+  <!-- ROOMS PREVIEW -->
+  <section id="rooms">
+    <div class="container">
+      <div class="section-header" data-anim>
+        <span class="section-eyebrow">Our Accommodations</span>
+        <h2 class="section-title">Curated Spaces of Refinement</h2>
+        <div class="gold-divider"><span>✦</span></div>
+        <p style="color:var(--text-mid);font-size:0.85rem;max-width:500px;margin:0 auto;line-height:1.9;">Each room and suite is a sanctuary of bespoke luxury, designed to elevate every moment of your stay.</p>
+      </div>
+      <div class="rooms-grid" id="rooms-preview-grid"></div>
+      <div style="text-align:center;margin-top:50px;" data-anim>
+        <a href="search.html" class="btn-outline">View All Rooms &amp; Suites</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- AMENITIES -->
+  <section style="padding:80px 0;" id="amenities">
+    <div class="container">
+      <div class="section-header" data-anim>
+        <span class="section-eyebrow">Exclusive Privileges</span>
+        <h2 class="section-title">World-Class Amenities</h2>
+        <div class="gold-divider"><span>✦</span></div>
+      </div>
+    </div>
+    <div class="features-grid">
+      <div class="feature-item" data-anim><span class="feature-icon">🍽️</span><div class="feature-name">Fine Dining</div></div>
+      <div class="feature-item" data-anim><span class="feature-icon">🏊</span><div class="feature-name">Infinity Pool</div></div>
+      <div class="feature-item" data-anim><span class="feature-icon">💆</span><div class="feature-name">Luxury Spa</div></div>
+      <div class="feature-item" data-anim><span class="feature-icon">🏋️</span><div class="feature-name">Fitness Center</div></div>
+      <div class="feature-item" data-anim><span class="feature-icon">🚗</span><div class="feature-name">Valet Parking</div></div>
+      <div class="feature-item" data-anim><span class="feature-icon">✈️</span><div class="feature-name">Airport Transfer</div></div>
+      <div class="feature-item" data-anim><span class="feature-icon">🎭</span><div class="feature-name">Concierge</div></div>
+      <div class="feature-item" data-anim><span class="feature-icon">🍾</span><div class="feature-name">Bar &amp; Lounge</div></div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section style="background:var(--dark-2);border-top:1px solid rgba(201,168,76,0.1);border-bottom:1px solid rgba(201,168,76,0.1);">
+    <div class="container">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;">
+        <div data-anim>
+          <span class="section-eyebrow">The Aurum Experience</span>
+          <h2 class="section-title" style="margin-bottom:24px;">A Century of<br><em style="font-style:italic;color:var(--gold-light);">Unrivalled Elegance</em></h2>
+          <div class="gold-divider" style="justify-content:flex-start;"><span>✦</span></div>
+          <p style="color:var(--text-mid);font-size:0.85rem;line-height:2;margin-bottom:28px;">Since 1924, Aurum Grand has stood as the pinnacle of hospitality excellence. Every corridor tells a story, every suite an experience that transcends the ordinary into the realm of extraordinary.</p>
+          <p style="color:var(--text-mid);font-size:0.85rem;line-height:2;margin-bottom:36px;">Our dedicated team of over 500 professionals stands ready to anticipate your every need, ensuring each stay is a masterclass in personalised luxury.</p>
+          <a href="search.html" class="btn-ghost">Reserve Now →</a>
+        </div>
+        <div data-anim style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+          <div style="height:220px;border-radius:2px;overflow:hidden;margin-top:30px;"><img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=500&q=80" alt="Lobby" style="width:100%;height:100%;object-fit:cover;"></div>
+          <div style="height:220px;border-radius:2px;overflow:hidden;"><img src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=500&q=80" alt="Suite" style="width:100%;height:100%;object-fit:cover;"></div>
+          <div style="height:220px;border-radius:2px;overflow:hidden;"><img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=500&q=80" alt="Restaurant" style="width:100%;height:100%;object-fit:cover;"></div>
+          <div style="height:220px;border-radius:2px;overflow:hidden;margin-top:-30px;"><img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=500&q=80" alt="Spa" style="width:100%;height:100%;object-fit:cover;"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section>
+    <div class="container">
+      <div class="section-header" data-anim>
+        <span class="section-eyebrow">Guest Voices</span>
+        <h2 class="section-title">Words of Distinction</h2>
+        <div class="gold-divider"><span>✦</span></div>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:24px;">
+        <div class="card-panel" data-anim>
+          <div style="color:var(--gold);font-size:1.3rem;margin-bottom:16px;">★★★★★</div>
+          <p style="font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-style:italic;color:var(--cream);line-height:1.8;margin-bottom:20px;">"An experience that transcends imagination. The Aurum Grand is not merely a hotel — it is a way of life."</p>
+          <div class="label-text">— Priya S., Mumbai</div>
+        </div>
+        <div class="card-panel" data-anim>
+          <div style="color:var(--gold);font-size:1.3rem;margin-bottom:16px;">★★★★★</div>
+          <p style="font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-style:italic;color:var(--cream);line-height:1.8;margin-bottom:20px;">"From the moment we arrived, every detail spoke of extraordinary care. The Presidential Suite was beyond words."</p>
+          <div class="label-text">— Arjun &amp; Meera T., Delhi</div>
+        </div>
+        <div class="card-panel" data-anim>
+          <div style="color:var(--gold);font-size:1.3rem;margin-bottom:16px;">★★★★★</div>
+          <p style="font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-style:italic;color:var(--cream);line-height:1.8;margin-bottom:20px;">"We have stayed in over 80 luxury hotels worldwide. Aurum Grand stands in a category of its own entirely."</p>
+          <div class="label-text">— Rajesh K., Bangalore</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section style="background:linear-gradient(135deg,rgba(14,13,11,0.95),rgba(37,34,32,0.98)),url('https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=1400&q=80') center/cover;text-align:center;padding:120px 5vw;">
+    <div class="container-sm" data-anim>
+      <span class="section-eyebrow">Begin Your Journey</span>
+      <h2 class="section-title" style="margin:16px 0 30px;">Reserve Your<br><em style="font-style:italic;color:var(--gold-light);">Perfect Escape</em></h2>
+      <div class="gold-divider"><span>✦</span></div>
+      <p style="color:var(--text-mid);font-size:0.85rem;line-height:2;max-width:420px;margin:24px auto 40px;">Indulge in the finest accommodations. Starting from ₹7,500 per night. Special rates for extended stays.</p>
+      <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
+        <a href="search.html" class="btn-primary"><span>Book Your Stay</span></a>
+        <a href="login.html" class="btn-outline">Sign In</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand">AURUM<span> GRAND</span></div>
+          <p class="footer-desc">A century of hospitality excellence. Where every detail is a testament to the art of fine living.</p>
+        </div>
+        <div>
+          <div class="footer-col-title">Navigation</div>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="search.html">Rooms &amp; Suites</a></li>
+            <li><a href="#amenities">Amenities</a></li>
+            <li><a href="#about">About</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-col-title">Services</div>
+          <ul class="footer-links">
+            <li><a href="#">Fine Dining</a></li>
+            <li><a href="#">Spa &amp; Wellness</a></li>
+            <li><a href="#">Events</a></li>
+            <li><a href="#">Concierge</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-col-title">Contact</div>
+          <ul class="footer-links">
+            <li><a href="#">+91 98765 43210</a></li>
+            <li><a href="#">reservations@aurumgrand.in</a></li>
+            <li><a href="#">1 Grand Plaza, Chennai</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2024 Aurum Grand Hotel. All rights reserved.</span>
+        <span>Privacy Policy · Terms of Service</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

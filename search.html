@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rooms &amp; Suites — Aurum Grand Hotel</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="search">
+
+  <nav class="navbar" id="navbar">
+    <a href="index.html" class="nav-logo">AURUM<span> GRAND</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html" data-page="home">Home</a></li>
+      <li><a href="search.html" data-page="search">Rooms</a></li>
+    </ul>
+    <button class="nav-btn" id="nav-auth-btn">Sign In</button>
+  </nav>
+
+  <div class="booking-page">
+    <div class="booking-hero">
+      <div class="booking-hero-bg"></div>
+      <div class="booking-hero-content">
+        <span class="label-text" style="display:block;margin-bottom:12px;">Step 2 of 5</span>
+        <h1 style="font-family:'Cormorant Garamond',serif;font-size:2.8rem;font-weight:300;letter-spacing:0.06em;color:var(--white);">Select Your Room</h1>
+        <p id="search-dates-label" style="color:var(--text-light);font-size:0.8rem;margin-top:12px;letter-spacing:0.08em;"></p>
+      </div>
+    </div>
+
+    <!-- PROGRESS -->
+    <div class="progress-strip">
+      <div class="progress-steps">
+        <div class="step-item"><div class="step-num done">✓</div><span class="step-label done">Login</span></div>
+        <div class="step-line done"></div>
+        <div class="step-item"><div class="step-num active">2</div><span class="step-label active">Select Room</span></div>
+        <div class="step-line"></div>
+        <div class="step-item"><div class="step-num">3</div><span class="step-label">Guest Details</span></div>
+        <div class="step-line"></div>
+        <div class="step-item"><div class="step-num">4</div><span class="step-label">Payment</span></div>
+        <div class="step-line"></div>
+        <div class="step-item"><div class="step-num">5</div><span class="step-label">Confirmation</span></div>
+      </div>
+    </div>
+
+    <!-- FILTERS -->
+    <div style="background:var(--dark-2);border-bottom:1px solid rgba(201,168,76,0.1);padding:24px 5vw;">
+      <div style="max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr 1fr 1fr auto;gap:16px;align-items:end;">
+        <div class="form-group">
+          <label class="form-label">Check-In</label>
+          <input type="date" class="form-control" id="s-checkin">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Check-Out</label>
+          <input type="date" class="form-control" id="s-checkout">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Guests</label>
+          <select class="form-control" id="s-guests">
+            <option value="1">1 Guest</option>
+            <option value="2">2 Guests</option>
+            <option value="3">3 Guests</option>
+            <option value="4">4 Guests</option>
+            <option value="5">5 Guests</option>
+            <option value="6">6 Guests</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Room Type</label>
+          <select class="form-control" id="s-roomtype">
+            <option value="any">All Types</option>
+            <option value="Classic">Classic Room</option>
+            <option value="Superior">Superior Room</option>
+            <option value="Junior">Junior Suite</option>
+            <option value="Deluxe">Deluxe Suite</option>
+            <option value="Presidential">Presidential Suite</option>
+          </select>
+        </div>
+        <button class="btn-primary" id="s-search-btn" style="height:52px;white-space:nowrap;"><span>Search</span></button>
+      </div>
+    </div>
+
+    <!-- ROOMS LIST -->
+    <div class="booking-body">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:32px;">
+        <div>
+          <h2 style="font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:300;margin-bottom:6px;">Available Rooms</h2>
+          <p id="rooms-count" style="color:var(--text-mid);font-size:0.78rem;letter-spacing:0.1em;"></p>
+        </div>
+        <div class="form-group" style="min-width:200px;">
+          <label class="form-label">Sort By</label>
+          <select class="form-control" id="s-sort">
+            <option value="default">Recommended</option>
+            <option value="price-asc">Price: Low to High</option>
+            <option value="price-desc">Price: High to Low</option>
+          </select>
+        </div>
+      </div>
+      <div class="rooms-grid" id="rooms-grid">
+        <div style="grid-column:1/-1;text-align:center;padding:60px;color:var(--text-mid);">
+          <div class="spinner" style="margin:0 auto 20px;"></div>
+          <p style="font-size:0.8rem;letter-spacing:0.1em;">Loading available rooms...</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div style="background:var(--dark-2);border-top:1px solid rgba(201,168,76,0.08);padding:28px 5vw;text-align:center;">
+    <p style="font-size:0.72rem;color:var(--text-mid);letter-spacing:0.08em;">© 2024 Aurum Grand Hotel · All rates in Indian Rupees (₹) · 18% GST applicable</p>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

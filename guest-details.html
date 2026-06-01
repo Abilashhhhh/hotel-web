@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guest Details — Aurum Grand Hotel</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="guest">
+
+  <nav class="navbar" id="navbar">
+    <a href="index.html" class="nav-logo">AURUM<span> GRAND</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html" data-page="home">Home</a></li>
+      <li><a href="search.html" data-page="search">Rooms</a></li>
+    </ul>
+    <button class="nav-btn" id="nav-auth-btn">Sign In</button>
+  </nav>
+
+  <div class="booking-page">
+    <div class="booking-hero">
+      <div class="booking-hero-bg"></div>
+      <div class="booking-hero-content">
+        <span class="label-text" style="display:block;margin-bottom:12px;">Step 3 of 5</span>
+        <h1 style="font-family:'Cormorant Garamond',serif;font-size:2.8rem;font-weight:300;color:var(--white);">Guest Details</h1>
+        <p style="color:var(--text-light);font-size:0.8rem;margin-top:12px;">Please provide your information for the reservation</p>
+      </div>
+    </div>
+
+    <!-- PROGRESS -->
+    <div class="progress-strip">
+      <div class="progress-steps">
+        <div class="step-item"><div class="step-num done">✓</div><span class="step-label done">Login</span></div>
+        <div class="step-line done"></div>
+        <div class="step-item"><div class="step-num done">✓</div><span class="step-label done">Select Room</span></div>
+        <div class="step-line done"></div>
+        <div class="step-item"><div class="step-num active">3</div><span class="step-label active">Guest Details</span></div>
+        <div class="step-line"></div>
+        <div class="step-item"><div class="step-num">4</div><span class="step-label">Payment</span></div>
+        <div class="step-line"></div>
+        <div class="step-item"><div class="step-num">5</div><span class="step-label">Confirmation</span></div>
+      </div>
+    </div>
+
+    <div class="booking-body">
+      <div class="booking-layout">
+        <div>
+          <div class="card-panel">
+            <h2 class="card-panel-title">Primary Guest Information</h2>
+            <p style="color:var(--text-mid);font-size:0.78rem;margin-bottom:30px;">Fields marked with * are required</p>
+            <div class="gold-divider" style="margin-bottom:30px;"><span>✦</span></div>
+
+            <form id="guest-form" style="display:flex;flex-direction:column;gap:20px;">
+              <div class="grid-2">
+                <div class="form-group">
+                  <label class="form-label" for="gd-firstname">First Name *</label>
+                  <input type="text" class="form-control" id="gd-firstname" name="firstName" placeholder="Rahul" required>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="gd-lastname">Last Name *</label>
+                  <input type="text" class="form-control" id="gd-lastname" name="lastName" placeholder="Sharma" required>
+                </div>
+              </div>
+              <div class="grid-2">
+                <div class="form-group">
+                  <label class="form-label" for="gd-email">Email Address *</label>
+                  <input type="email" class="form-control" id="gd-email" name="email" placeholder="your@email.com" required>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="gd-phone">Phone Number *</label>
+                  <input type="tel" class="form-control" id="gd-phone" name="phone" placeholder="+91 98765 43210" required>
+                </div>
+              </div>
+              <div class="grid-2">
+                <div class="form-group">
+                  <label class="form-label" for="gd-nationality">State / Nationality</label>
+                  <select class="form-control" id="gd-nationality" name="nationality">
+                    <option value="">Select State</option>
+                    <option value="TN">Tamil Nadu</option>
+                    <option value="MH">Maharashtra</option>
+                    <option value="DL">Delhi</option>
+                    <option value="KA">Karnataka</option>
+                    <option value="KL">Kerala</option>
+                    <option value="GJ">Gujarat</option>
+                    <option value="RJ">Rajasthan</option>
+                    <option value="WB">West Bengal</option>
+                    <option value="AP">Andhra Pradesh</option>
+                    <option value="TS">Telangana</option>
+                    <option value="Other">Other / International</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="gd-id">Aadhaar / Passport Number</label>
+                  <input type="text" class="form-control" id="gd-id" name="idNumber" placeholder="ID for check-in verification">
+                </div>
+              </div>
+
+              <div style="margin-top:10px;padding-top:24px;border-top:1px solid rgba(201,168,76,0.1);">
+                <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:300;margin-bottom:20px;">Stay Preferences</h3>
+                <div class="grid-2">
+                  <div class="form-group">
+                    <label class="form-label" for="gd-arrival">Estimated Arrival Time</label>
+                    <select class="form-control" id="gd-arrival" name="arrivalTime">
+                      <option value="">Select time</option>
+                      <option value="12:00">12:00 PM</option>
+                      <option value="14:00">2:00 PM (Standard)</option>
+                      <option value="15:00">3:00 PM</option>
+                      <option value="16:00">4:00 PM</option>
+                      <option value="18:00">6:00 PM</option>
+                      <option value="20:00">8:00 PM</option>
+                      <option value="22:00">10:00 PM (Late)</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label" for="gd-bed">Bed Preference</label>
+                    <select class="form-control" id="gd-bed" name="bedPreference">
+                      <option value="any">No Preference</option>
+                      <option value="king">King Bed</option>
+                      <option value="twin">Twin Beds</option>
+                      <option value="queen">Queen Bed</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="form-group" style="margin-top:16px;">
+                  <label class="form-label" for="gd-requests">Special Requests</label>
+                  <textarea class="form-control" id="gd-requests" name="specialRequests" rows="4"
+                    placeholder="Any dietary requirements, accessibility needs, celebration arrangements, or special room preferences..."
+                    style="resize:vertical;"></textarea>
+                </div>
+              </div>
+
+              <div style="padding:20px;background:rgba(201,168,76,0.05);border:1px solid rgba(201,168,76,0.12);border-radius:2px;">
+                <p style="font-size:0.75rem;color:var(--text-mid);line-height:1.8;">✦ &nbsp;By proceeding, you confirm all guest information is accurate. Your data is protected per PDPB 2023 guidelines and used solely for reservation purposes.</p>
+              </div>
+
+              <div style="display:flex;gap:14px;margin-top:10px;">
+                <a href="search.html" class="btn-outline">← Back to Rooms</a>
+                <button type="submit" class="btn-primary" style="flex:1;"><span>Continue to Payment →</span></button>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div id="guest-summary"></div>
+      </div>
+    </div>
+  </div>
+
+  <div style="background:var(--dark-2);border-top:1px solid rgba(201,168,76,0.08);padding:28px 5vw;text-align:center;">
+    <p style="font-size:0.72rem;color:var(--text-mid);">🔒 &nbsp;256-bit SSL Encrypted · © 2024 Aurum Grand Hotel</p>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
